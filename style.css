@@ -1,0 +1,328 @@
+/* Базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #111827; /* Глубокий темный фон */
+    color: #F9FAFB; /* Почти белый текст */
+}
+
+/* Шапка сайта */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #1F2937; /* Темно-серая шапка */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    position: sticky; /* Шапка прилипает к верху при прокрутке */
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #3B82F6; /* Яркий синий акцент */
+}
+
+.menu a {
+    text-decoration: none;
+    color: #D1D5DB; /* Светло-серый текст меню */
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #3B82F6;
+}
+
+/* Главный экран */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 46px;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    color: #FFFFFF;
+}
+
+.hero-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    color: #9CA3AF;
+}
+
+.hero-image img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.4); /* Неоновое свечение вокруг фото */
+    border: 4px solid #3B82F6;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    background-color: #3B82F6;
+    color: #ffffff;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #2563EB;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Раздел с услугами */
+.services, .reviews-section, .gallery-section {
+    padding: 80px 50px;
+    text-align: center;
+}
+
+/* Чередование фона для разделов */
+.services { background-color: #1F2937; }
+.reviews-section { background-color: #111827; }
+.gallery-section { background-color: #1F2937; }
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #FFFFFF;
+}
+
+.subtitle {
+    color: #9CA3AF;
+    margin-top: -30px;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+/* Карточки услуг */
+.card {
+    background: #374151; /* Более светлый серый для карточек */
+    padding: 40px 30px;
+    border-radius: 15px;
+    width: 320px;
+    text-align: left;
+    transition: transform 0.3s;
+    border-top: 5px solid #3B82F6;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: #FFFFFF;
+}
+
+.card p {
+    font-size: 15px;
+    color: #D1D5DB;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: 700;
+    color: #3B82F6;
+}
+
+/* Карточки отзывов (НОВОЕ) */
+.review-card {
+    background: #1F2937;
+    padding: 40px;
+    border-radius: 15px;
+    width: 450px;
+    text-align: left;
+    border-left: 5px solid #3B82F6; /* Акцентная линия слева */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.quote {
+    font-size: 16px;
+    font-style: italic;
+    color: #D1D5DB;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.student-author strong {
+    display: block;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+.student-author span {
+    color: #3B82F6;
+    font-size: 14px;
+}
+
+/* Галерея учеников (НОВОЕ) */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    position: relative;
+    width: 280px;
+    height: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Легкое увеличение фото при наведении */
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(17, 24, 39, 0.8); /* Полупрозрачная темная плашка */
+    color: white;
+    padding: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Подвал / Контакты */
+.footer {
+    padding: 80px 50px;
+    text-align: center;
+    background-color: #111827;
+    border-top: 1px solid #374151;
+}
+
+.footer h2 { margin-bottom: 20px; }
+
+.footer p {
+    margin-bottom: 40px;
+    color: #9CA3AF;
+}
+
+.social-links { margin-bottom: 40px; display: flex; justify-content: center; gap: 20px;}
+
+.btn-telegram { background-color: #27A5E7; }
+.btn-telegram:hover { background-color: #1d8bc5; }
+
+.btn-whatsapp { background-color: #25D366; }
+.btn-whatsapp:hover { background-color: #1da851; }
+
+.copyright { font-size: 14px; color: #6B7280; }
+/* =========================================
+   АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ (Меньше 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* Шапка сайта: выстраиваем логотип и меню в столбик */
+    .header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .menu {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap; /* Разрешаем ссылкам переноситься на новую строку */
+        justify-content: center;
+        gap: 15px; /* Расстояние между ссылками */
+    }
+
+    .menu a {
+        margin-left: 0;
+        font-size: 14px;
+    }
+
+    /* Главный экран: текст и фото в столбик */
+    .hero {
+        flex-direction: column-reverse; /* Фото будет сверху, текст снизу */
+        text-align: center; /* Текст по центру */
+        padding: 40px 20px;
+    }
+
+    .hero-text {
+        max-width: 100%; /* Текст на всю ширину экрана */
+    }
+
+    .hero-text h1 {
+        font-size: 32px; /* Уменьшаем размер главного заголовка */
+        margin-top: 20px;
+    }
+
+    .hero-image img {
+        width: 250px; /* Уменьшаем фото */
+        height: 250px;
+    }
+
+    /* Разделы: уменьшаем отступы по краям */
+    .services, .reviews-section, .gallery-section, .footer {
+        padding: 50px 20px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    /* Карточки: делаем их на всю ширину экрана телефона */
+    .card, .review-card, .gallery-item {
+        width: 100%; 
+    }
+
+    /* Подвал: кнопки выстраиваем в столбик */
+    .social-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
