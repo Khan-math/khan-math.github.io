@@ -1,112 +1,415 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Репетитор по математике</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Хан Георгий — репетитор по математике</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Шапка сайта -->
-    <header class="header">
-        <div class="logo">Георгий Владимирович Хан</div>
-        <nav class="menu">
-            <a href="#about">Обо мне</a>
-            <a href="#services">Услуги</a>
-            <a href="#reviews">Отзывы</a>
-            <a href="#students">Ученики</a>
-            <a href="#contacts">Контакты</a>
-        </nav>
-    </header>
+<!-- ANIMATED MATH BACKGROUND -->
+<canvas id="math-canvas"></canvas>
 
-    <!-- Главный экран -->
-    <section id="about" class="hero">
-        <div class="hero-text">
-            <h1>Понятная математика для успешной сдачи ОГЭ и ЕГЭ</h1>
-            <p>Каждое поколение - особенное. Каждый ученик - уникален. К каждому нужен свой подход. Кто-то экстренно выбрал "профиль", кто-то целенаправленно идет к 80+ баллов. Каждая ситуация требует своего подхода. Уже более 9 лет учу ребят, что язык точных наук может понять каждый.  </p>
-            <a href="#contacts" class="btn">Записаться на занятие</a>
-        </div>
-        <div class="hero-image">
-            <img src="photo.jpg" alt="Фото репетитора">
-        </div>
-    </section>
+<nav>
+  <a href="#hero" class="nav-logo">Георгий Хан</a>
+  <ul class="nav-links">
+    <li><a href="#about">Обо мне</a></li>
+    <li><a href="#reviews">Отзывы</a></li>
+    <li><a href="#photos">Фото</a></li>
+    <li><a href="#pricing">Стоимость</a></li>
+    <li><a href="#location">Где занимаемся</a></li>
+    <li><a href="#contacts">Контакты</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<nav class="mobile-menu" id="mobile-menu">
+  <a href="#about">Обо мне</a>
+  <a href="#reviews">Отзывы</a>
+  <a href="#photos">Фото</a>
+  <a href="#pricing">Стоимость</a>
+  <a href="#location">Где занимаемся</a>
+  <a href="#contacts">Контакты</a>
+</nav>
 
-    <!-- Раздел с услугами -->
-    <section id="services" class="services">
-        <h2>Форматы занятий</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>📘 Подготовка к ОГЭ</h3>
-                <p>Разбираем всю базу с 5 по 9 класс. От простого к сложному. От 3ки до максимального балла</p>
-                <div class="price">1 700 ₽ / час</div>
-            </div>
-            <div class="card">
-                <h3>📙 Подготовка к ЕГЭ</h3>
-                <p>Профиль и база. Отработка первой части без ошибок,джентельменская нарешка (самый быстрый путь к 80+баллов).</p>
-                <div class="price">2 000 ₽ / час</div>
-            </div>
-            <div class="card">
-                <h3>📗 Помощь по школе</h3>
-                <p>Повышение успеваемости, помощь с домашними заданиями и подготовка к контрольным.</p>
-                <div class="price">1 500 ₽ / час</div>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero" id="hero">
+  <p class="hero-eyebrow">Репетитор по математике</p>
+  <h1>Математика<br>без страха</h1>
+  <p class="hero-sub">Готовлю к ЕГЭ, ОГЭ и МЦКО.<br>Объясняю понятно — с нуля до результата.</p>
+  <a href="#contacts" class="hero-cta">Связаться со мной</a>
+</section>
 
-    <!-- НОВЫЙ РАЗДЕЛ: Отзывы -->
-    <section id="reviews" class="reviews-section">
-        <h2>Что говорят мои ученики</h2>
-        <div class="cards">
-            <div class="review-card">
-                <p class="quote">«Благодаря Алексею я сдал профиль на 88 баллов! Раньше вообще не понимал геометрию, а теперь это мой любимый раздел.»</p>
-                <div class="student-author">
-                    <strong>Михаил, 11 класс</strong>
-                    <span>Поступил в МГТУ им. Баумана</span>
-                </div>
-            </div>
-            <div class="review-card">
-                <p class="quote">«За полгода вытянули оценку с твердой тройки на пятерку. ОГЭ сдала на максимальный балл. Очень комфортные занятия!»</p>
-                <div class="student-author">
-                    <strong>Анна, 9 класс</strong>
-                    <span>Оценка: 5 (31 балл)</span>
-                </div>
-            </div>
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-photo">
+      <img src="photos/about.jpg" alt="Георгий Хан — репетитор по математике" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+    </div>
+    <div class="about-text fade-up">
+      <p class="section-label">Обо мне</p>
+      <h2 class="section-title">10 лет в математике и людях</h2>
+      <p class="section-sub">
+        Меня зовут Георгий Владимирович. Мне 28 лет, окончил бакалавриат и магистратуру РУТ (МИИТ) и уже 10 лет помогаю школьникам разобраться с математикой. Работаю с учениками 5–11 классов: от поддержки школьной программы до серьёзной подготовки к профильному ЕГЭ.
+      </p>
+      <p class="section-sub" style="margin-top: 16px;">
+        Моя задача — не просто натренировать на задачи, а дать понимание. Три кейса, которыми горжусь особенно:
+      </p>
+      <p class="section-sub" style="margin-top: 12px;">
+        🎯 <strong>«Джентльменская нарешка»</strong> — системная подготовка к ЕГЭ 80+: разбираем каждый тип задания до автоматизма, чтобы на экзамене не было сюрпризов.
+      </p>
+      <p class="section-sub" style="margin-top: 12px;">
+        ⚡ <strong>Последний момент</strong> — брал ребят, которые решали сдавать профильную математику за несколько месяцев до экзамена, и выводил на достойный результат.
+      </p>
+      <p class="section-sub" style="margin-top: 12px;">
+        💪 <strong>«Я не умею в математику»</strong> — работал с учениками, которые были уверены, что математика — не их. Вместе находили точку опоры и двигались вперёд.
+      </p>
+      <div class="about-stats">
+        <div class="stat">
+          <div class="stat-num">350+</div>
+          <div class="stat-label">Учеников</div>
         </div>
-    </section>
-
-    <!-- НОВЫЙ РАЗДЕЛ: Фотографии учеников -->
-    <section id="students" class="gallery-section">
-        <h2>Горжусь их результатами</h2>
-        <p class="subtitle">Листайте фото моих чемпионов</p>
-        <div class="gallery">
-            <!-- Сюда нужны будут фото твоих учеников -->
-            <div class="gallery-item">
-                <img src="student1.jpg" alt="Ученик 1">
-                <div class="gallery-caption">Яся — покакала во время ЕГЭ</div>
-            </div>
-            <div class="gallery-item">
-                <img src="student2.jpg" alt="Ученица 2">
-                <div class="gallery-caption">Ясик — фото на занятии</div>
-            </div>
-            <div class="gallery-item">
-                <img src="student3.jpg" alt="Ученик 3">
-                <div class="gallery-caption">Ясик написал на матрасик — красивое фото с мамой</div>
-            </div>
+        <div class="stat">
+          <div class="stat-num">74+</div>
+          <div class="stat-label">Средний балл ЕГЭ</div>
         </div>
-    </section>
-
-    <!-- Подвал (Контакты) -->
-    <footer id="contacts" class="footer">
-        <h2>Давайте начнем!</h2>
-        <p>Напишите мне в любой удобный мессенджер, и мы проведем бесплатное пробное занятие (30 минут).</p>
-        <div class="social-links">
-            <a href="https://t.me/pvnacea" target="_blank" class="btn btn-telegram">Написать в Telegram</a>
-            <a href="https://wa.me/89251521205" target="_blank" class="btn btn-whatsapp">Написать в WhatsApp</a>
+        <div class="stat">
+          <div class="stat-num">10</div>
+          <div class="stat-label">Лет опыта</div>
         </div>
-        <p class="copyright">© 2024 Хан Георгий. Репетитор по математике.</p>
-    </footer>
+        <div class="stat">
+          <div class="stat-num">87%</div>
+          <div class="stat-label">Рекомендуют друзьям</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- REVIEWS -->
+<section id="reviews" style="background: var(--gray-light);">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <p class="section-label fade-up">Отзывы</p>
+    <h2 class="section-title fade-up">Что говорят ученики</h2>
+  </div>
+  <div class="reviews-inner">
+    <div class="review-card fade-up">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">«Сидел за партой с видом "зачем мне это вообще" — и вдруг производные щёлкнули. Не знаю как, но Георгий Владимирович это сделал. Итог: 89 на ЕГЭ, я в шоке сам от себя 💀»</p>
+      <div class="review-author">
+        <div class="review-author-name">Максим Петров</div>
+        <div class="review-author-sub">11 класс, ЕГЭ 2024</div>
+      </div>
+    </div>
+    <div class="review-card fade-up" style="transition-delay: 0.1s;">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">«Сын говорил "математика — это не моё" лет пять подряд. Через полгода с Георгием сам просит разобрать задачки сверх программы. Я до сих пор не верю что это мой ребёнок 😅»</p>
+      <div class="review-author">
+        <div class="review-author-name">Елена Смирнова</div>
+        <div class="review-author-sub">Мама ученика, 9 класс</div>
+      </div>
+    </div>
+    <div class="review-card fade-up" style="transition-delay: 0.2s;">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">«В феврале решила что буду сдавать профиль. Все крутили у виска. Георгий Владимирович — нет. За 4 месяца взяли sixseven, это вообще нереально было 🔥»</p>
+      <div class="review-author">
+        <div class="review-author-name">Вика Козлова</div>
+        <div class="review-author-sub">11 класс, ЕГЭ 2024</div>
+      </div>
+    </div>
+    <div class="review-card fade-up" style="transition-delay: 0.1s;">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">«Два года занимаемся и он до сих пор не устал от моих "а зачем это вообще нужно в жизни". Терпение бесконечное, объясняет пока не дойдёт. Очень рад, что к вам попал »</p>
+      <div class="review-author">
+        <div class="review-author-name">Артём Волков</div>
+        <div class="review-author-sub">8 класс</div>
+      </div>
+    </div>
+    <div class="review-card fade-up" style="transition-delay: 0.2s;">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">«Шёл на ОГЭ с твёрдой тройкой в голове и лёгкой паникой. Георгий Владимирович разобрал со мной все темы где я плавал — особенно геометрию, её я просто ненавидел. Сдал на 4, очень рад 😂»</p>
+      <div class="review-author">
+        <div class="review-author-name">Игорь Новиков</div>
+        <div class="review-author-sub">9 класс, ОГЭ 2024</div>
+      </div>
+    </div>
+    <div class="review-card fade-up" style="transition-delay: 0.3s;">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">«Была твёрдая тройка и ощущение что я тупая. За 3 месяца пятёрка в журнале и конспекты после каждого урока в вотсапе — всё по-человечески, без воды.»</p>
+      <div class="review-author">
+        <div class="review-author-name">Наташа Григорьева</div>
+        <div class="review-author-sub">7 класс</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTOS -->
+<section id="photos">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <p class="section-label fade-up">Фотографии</p>
+    <h2 class="section-title fade-up">Занятия в действии</h2>
+    <div class="photos-inner">
+      <div class="photo-card wide fade-up" onclick="openLightbox('photos/yaroslav.jpg', 'Ярослав, 11 класс — ЕГЭ')">
+        <img src="photos/yaroslav.jpg" alt="Ярослав, 11 класс — ЕГЭ" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+      </div>
+      <div class="photo-card  fade-up" style="transition-delay:0.05s;" onclick="openLightbox('photos/varya.jpg', 'Варя, 11 класс')">
+        <img src="photos/varya.jpg" alt="Варя, 11 класс" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+      </div>
+      <div class="photo-card  fade-up" style="transition-delay:0.10s;" onclick="openLightbox('photos/dasha.jpg', 'Даша, 11 класс')">
+        <img src="photos/dasha.jpg" alt="Даша, 11 класс" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+      </div>
+      <div class="photo-card tall fade-up" style="transition-delay:0.15s;" onclick="openLightbox('photos/masha2.jpg', 'Маша, 9 класс')">
+        <img src="photos/masha2.jpg" alt="Маша, 9 класс" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+      </div>
+      <div class="photo-card  fade-up" style="transition-delay:0.20s;" onclick="openLightbox('photos/dasha_tsoy.jpg', 'Даша Цой, 11 класс')">
+        <img src="photos/dasha_tsoy.jpg" alt="Даша Цой, 11 класс" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+      </div>
+      <div class="photo-card  fade-up" style="transition-delay:0.25s;" onclick="openLightbox('photos/laura.jpg', 'Лаура, 10 класс')">
+        <img src="photos/laura.jpg" alt="Лаура, 10 класс" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+      </div>
+      <div class="photo-card  fade-up" style="transition-delay:0.30s;" onclick="openLightbox('photos/masha.jpg', 'Маша, 9 класс')">
+        <img src="photos/masha.jpg" alt="Маша, 9 класс" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+      </div>
+      <div class="photo-card  fade-up" style="transition-delay:0.35s;" onclick="openLightbox('photos/dima.jpg', 'Дима, 11 класс')">
+        <img src="photos/dima.jpg" alt="Дима, 11 класс" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+      </div>
+      <div class="photo-card  fade-up" style="transition-delay:0.40s;" onclick="openLightbox('photos/yaroslav_online.jpg', 'Ярослав — онлайн')">
+        <img src="photos/yaroslav_online.jpg" alt="Ярослав — онлайн" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+      </div>
+      <div class="photo-card  fade-up" style="transition-delay:0.45s;" onclick="openLightbox('photos/oge_dasha.jpg', 'Результаты ОГЭ')">
+        <img src="photos/oge_dasha.jpg" alt="Результаты ОГЭ" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+      </div>
+      <div class="photo-card  fade-up" style="transition-delay:0.50s;" onclick="openLightbox('photos/mem.jpg', 'Атмосфера занятий 😄')">
+        <img src="photos/mem.jpg" alt="Атмосфера занятий 😄" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" style="background: var(--gray-light);">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <p class="section-label fade-up">Стоимость</p>
+    <h2 class="section-title fade-up">Понятные цены</h2>
+    <p class="section-sub fade-up">Без скрытых платежей и обязательных пакетов. Выбирайте формат, который удобен вам.</p>
+  </div>
+  <div class="pricing-inner">
+    <div class="price-card fade-up">
+      <p class="price-format">Подготовка к ОГЭ, МЦКО</p>
+      <div class="price-amount">1 800 ₽</div>
+      <p class="price-period">за 60 минут</p>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li><span class="price-check">✓</span>Онлайн или офлайн — как удобно вам</li>
+        <li><span class="price-check">✓</span>Приятная атмосфера: без стресса и спешки</li>
+        <li><span class="price-check">✓</span>Разбор всех тем экзамена по плану</li>
+        <li><span class="price-check">✓</span>Обратная связь в мессенджере между уроками</li>
+        <li><span class="price-check">✓</span>Материалы и конспекты после каждого занятия</li>
+      </ul>
+    </div>
+    <div class="price-card featured fade-up" style="transition-delay: 0.1s;">
+      <div class="price-badge">Популярный</div>
+      <p class="price-format">Подготовка к ЕГЭ профильного уровня</p>
+      <div class="price-amount">2 000 ₽</div>
+      <p class="price-period">за 60 минут</p>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li><span class="price-check">✓</span>Системная работа по всем заданиям профиля</li>
+        <li><span class="price-check">✓</span>Разбор сложных задач части 2</li>
+        <li><span class="price-check">✓</span>Пробные варианты в формате реального ЕГЭ</li>
+        <li><span class="price-check">✓</span>Обратная связь и ответы на вопросы в чате</li>
+        <li><span class="price-check">✓</span>Поддержка вплоть до дня экзамена</li>
+      </ul>
+    </div>
+    <div class="price-card fade-up" style="transition-delay: 0.2s;">
+      <p class="price-format">Поддержка школьной программы 5–11 класс</p>
+      <div class="price-amount">1 800–2 200 ₽</div>
+      <p class="price-period">за 60 минут · цена зависит от класса</p>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li><span class="price-check">✓</span>Разбор школьных домашних заданий</li>
+        <li><span class="price-check">✓</span>Подготовка к контрольным и самостоятельным</li>
+        <li><span class="price-check">✓</span>Ликвидация пробелов по программе</li>
+        <li><span class="price-check">✓</span>Оперативная поддержка в мессенджере</li>
+        <li><span class="price-check">✓</span>Гибкое расписание — онлайн или офлайн</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location">
+  <div style="max-width: 1100px; margin: 0 auto 56px;">
+    <p class="section-label fade-up">Где занимаемся</p>
+    <h2 class="section-title fade-up">Офлайн и онлайн</h2>
+    <p class="section-sub fade-up">Встречаемся лично в Троицке или занимаемся из любой точки мира.</p>
+  </div>
+  <div class="location-inner">
+    <div class="fade-up">
+      <div class="location-address">
+        <div class="location-address-icon">📍</div>
+        <div>
+          <div class="location-address-label">Адрес офлайн-занятий</div>
+          <div class="location-address-value">г. Троицк (Москва)<br>ул. Текстильщиков</div>
+        </div>
+      </div>
+      <div class="location-map">
+        <iframe
+          src="https://maps.google.com/maps?q=55.4909841,37.3081995&z=15&output=embed"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+    <div class="fade-up" style="transition-delay: 0.15s;">
+      <p class="online-title">Платформы для онлайн-занятий</p>
+      <ul class="platform-list">
+        <li class="platform-item">
+          <div class="platform-icon">💙</div>
+          <div>
+            <div class="platform-name">ВКонтакте + VK Доска</div>
+            <div class="platform-sub">Видеозвонок и интерактивная доска прямо в VK</div>
+          </div>
+        </li>
+        <li class="platform-item">
+          <div class="platform-icon">🟡</div>
+          <div>
+            <div class="platform-name">Яндекс Телемост + Яндекс Доска</div>
+            <div class="platform-sub">Стабильная связь и совместная доска без лишних приложений</div>
+          </div>
+        </li>
+        <li class="platform-item">
+          <div class="platform-icon">💬</div>
+          <div>
+            <div class="platform-name">Miro — онлайн-доска</div>
+            <div class="platform-sub">Удобно для наглядного разбора задач и схем</div>
+          </div>
+        </li>
+      </ul>
+      <p style="margin-top: 28px; font-size: 14px; color: var(--gray-mid); line-height: 1.6;">
+        Выбираем платформу вместе — исходя из того, что привычнее и удобнее вам. Никаких лишних установок.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section id="contacts">
+  <div style="max-width: 1100px; margin: 0 auto; text-align: center; margin-bottom: 56px;">
+    <p class="section-label fade-up">Контакты</p>
+    <h2 class="section-title fade-up">Давайте поговорим</h2>
+    <p class="section-sub fade-up" style="margin: 0 auto;">Напишите удобным способом — отвечаю в течение дня.</p>
+  </div>
+  <div class="contacts-inner fade-up">
+    <a href="https://t.me/pvnacea" target="_blank" rel="noopener" class="contact-item">
+      <div class="contact-icon">✈️</div>
+      <div>
+        <div class="contact-label">Telegram</div>
+        <div class="contact-value">@pvnacea</div>
+      </div>
+      <span class="contact-arrow">›</span>
+    </a>
+    <a href="https://web.max.ru/74088509" target="_blank" rel="noopener" class="contact-item">
+      <div class="contact-icon">💬</div>
+      <div>
+        <div class="contact-label">MAX</div>
+        <div class="contact-value">+7 925 152 12 05</div>
+      </div>
+      <span class="contact-arrow">›</span>
+    </a>
+    <a href="https://vk.com/khanmath" target="_blank" rel="noopener" class="contact-item">
+      <div class="contact-icon">💙</div>
+      <div>
+        <div class="contact-label">ВКонтакте</div>
+        <div class="contact-value">vk.com/khanmath</div>
+      </div>
+      <span class="contact-arrow">›</span>
+    </a>
+    <a href="https://wa.me/79251521205" target="_blank" rel="noopener" class="contact-item">
+      <div class="contact-icon">📱</div>
+      <div>
+        <div class="contact-label">WhatsApp</div>
+        <div class="contact-value">+7 925 152 12 05</div>
+      </div>
+      <span class="contact-arrow">›</span>
+    </a>
+    <a href="mailto:alwayswannabebest@gmail.com" class="contact-item">
+      <div class="contact-icon">📧</div>
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value">alwayswannabebest@gmail.com</div>
+      </div>
+      <span class="contact-arrow">›</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Хан Георгий Владимирович — репетитор по математике</span>
+  <span>Москва · Онлайн по всей России</span>
+</footer>
+
+<script>
+/* ── SCROLL REVEAL ── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+/* ── MATH CANVAS BACKGROUND (static) ── */
+(function() {
+  const canvas = document.getElementById('math-canvas');
+  const ctx = canvas.getContext('2d');
+
+  const symbols = [
+    'π', 'Σ', '∫', '√', '∞', 'Δ', 'θ', 'α', 'β', 'λ', 'μ', 'φ',
+    'sin', 'cos', 'tan', 'log', 'lim', 'dx', 'dy', 'f(x)', 'x²', 'y³',
+    'a²+b²=c²', 'eˣ', 'n!', '∂', '∇', '≈', '≠', '±',
+    'x→∞', 'P(A|B)', '∀x∈ℝ', '∃y', 'det(A)', 'sin²+cos²=1'
+  ];
+
+  function rand(a, b) { return a + Math.random() * (b - a); }
+
+  function draw() {
+    const W = canvas.width  = window.innerWidth;
+    const H = canvas.height = document.documentElement.scrollHeight;
+    const count = Math.floor((W * H) / 14000);
+    ctx.fillStyle = '#1d1d1f';
+    for (let i = 0; i < count; i++) {
+      const size = rand(14, 32);
+      ctx.globalAlpha = rand(0.35, 0.85);
+      ctx.font = `300 ${size}px Inter, sans-serif`;
+      ctx.fillText(
+        symbols[Math.floor(Math.random() * symbols.length)],
+        rand(0, W),
+        rand(0, H)
+      );
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  // draw once on load, redraw on resize
+  window.addEventListener('load', draw);
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(draw, 200);
+  });
+  draw();
+})();
+</script>
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
+  <div class="lightbox-img-wrap" id="lightbox-wrap">
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
+  </div>
+  <span class="lightbox-caption" id="lightbox-caption"></span>
+  <button class="lightbox-close" onclick="closeLightbox(event)">✕</button>
+</div>
 </body>
 </html>
